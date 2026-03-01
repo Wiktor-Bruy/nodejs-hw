@@ -3,11 +3,11 @@ import cors from 'cors';
 
 import 'dotenv/config';
 
-import { logger } from './middleware/logger';
-import { notFound } from './middleware/notFoundHandler';
-import { errorHandler } from './middleware/errorHandler';
-import { connectMongoDB } from './db/connectMongoDB';
-import notesRouter from './routes/notesRoutes';
+import { logger } from './middleware/logger.js';
+import { notFound } from './middleware/notFoundHandler.js';
+import { errorHandler } from './middleware/errorHandler.js';
+import { connectMongoDB } from './db/connectMongoDB.js';
+import notesRouter from './routes/notesRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
