@@ -24,19 +24,20 @@ const noteShema = new Schema(
     },
   },
   {
-    autoIndex: process.env.NODE_ENV === 'dev',
     timeseries: true,
     versionKey: false,
   },
 );
 
-noteShema.indexes(
-  { title: 'text', content: 'text' },
-  {
-    name: 'NotesTextIndex',
-    weights: { title: 5, content: 1 },
-    default_language: 'english',
-  },
-);
+noteShema.index({ title: 'text' });
+
+// noteShema.index(
+//   { title: 'text', content: 'text' },
+//   {
+//     name: 'NotesTextIndex',
+//     weights: { title: 5, content: 1 },
+//     default_language: 'english',
+//   },
+// );
 
 export const Note = model('Note', noteShema);
