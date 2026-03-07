@@ -32,11 +32,11 @@ const noteShema = new Schema(
 
 noteShema.index(
   { title: 'text', content: 'text' },
-  {
-    name: 'NotesTextIndex',
-    weights: { title: 5, content: 1 },
-    default_language: 'english',
-  },
+  // {
+  //   name: 'NotesTextIndex',
+  //   weights: { title: 5, content: 1 },
+  //   default_language: 'english',
+  // },
 );
 
 export const Note = model('Note', noteShema);
