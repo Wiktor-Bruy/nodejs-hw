@@ -21,7 +21,7 @@ export const getAllNotesSchema = {
       'number.max': 'PerPage must be at most {#limit}',
     }),
     tag: Joi.string()
-      .valid(TAGS)
+      .valid(...TAGS)
       .messages({
         'string.base': 'Tag must be a string',
         'any.only': `Tag must be one of: ${TAGS}`,
@@ -49,7 +49,7 @@ export const createNoteSchema = {
       'string.base': 'Content must be a string',
     }),
     tag: Joi.string()
-      .valid(TAGS)
+      .valid(...TAGS)
       .default('Todo')
       .messages({
         'string.base': 'Tag must be a string',
@@ -71,7 +71,7 @@ export const updateNoteSchema = {
       'string.base': 'Content must be a string',
     }),
     tag: Joi.string()
-      .valid(TAGS)
+      .valid(...TAGS)
       .messages({
         'string.base': 'Tag must be a string',
         'any.only': `Tag must be one of: ${TAGS}`,
