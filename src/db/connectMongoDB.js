@@ -10,7 +10,7 @@ export async function connectMongoDB() {
     await Note.syncIndexes();
     console.log('✅ Index synchronization successful');
   } catch (error) {
-    console.log(error.message);
+    console.log(`Error: ${error.message}`);
     process.exit(1);
   }
 }
