@@ -27,9 +27,14 @@ const noteShema = new Schema(
     timeseries: true,
     versionKey: false,
   },
+).index(
+  { title: 'text', content: 'text' },
+  {
+    name: 'NotesTextIndex',
+    weights: { title: 5, content: 1 },
+    default_language: 'english',
+  },
 );
-
-noteShema.index({ title: 'text' });
 
 // noteShema.index(
 //   { title: 'text', content: 'text' },
