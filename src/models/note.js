@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import 'dotenv/config';
 
 import { TAGS } from '../constants/tags.js';
 
@@ -23,6 +24,7 @@ const noteShema = new Schema(
     },
   },
   {
+    autoIndex: process.env.NODE_ENV === 'dev',
     timeseries: true,
     versionKey: false,
   },
