@@ -30,11 +30,11 @@ const noteShema = new Schema(
   },
 );
 
-noteShema.createIndex(
-  { title: 'text', content: 'text' },
+noteShema.index(
+  { title: 'text' },
   {
     name: 'NotesTextIndex',
-    weights: { title: 5, content: 1 },
+    // weights: { title: 5, content: 1 },
     default_language: 'english',
   },
 );
