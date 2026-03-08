@@ -11,7 +11,6 @@ export async function connectMongoDB() {
     console.log('✅ Index synchronization successful');
   } catch (error) {
     console.log(`❌ Error connect Mongo DB: ${error.message}`);
-    console.log(error);
     process.exit(1);
   }
 }
