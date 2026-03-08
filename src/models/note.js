@@ -3,7 +3,7 @@ import 'dotenv/config';
 
 import { TAGS } from '../constants/tags.js';
 
-const noteShema = new Schema(
+const noteSchema = new Schema(
   {
     title: {
       type: String,
@@ -24,13 +24,12 @@ const noteShema = new Schema(
     },
   },
   {
-    autoIndex: false,
-    timeseries: true,
+    timestamps: true,
     versionKey: false,
   },
 );
 
-noteShema.index(
+noteSchema.index(
   { title: 'text', content: 'text' },
   {
     name: 'NotesTextIndex',
@@ -39,4 +38,4 @@ noteShema.index(
   },
 );
 
-export const Note = model('Note', noteShema);
+export const Note = model('Note', noteSchema);

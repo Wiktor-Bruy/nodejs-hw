@@ -5,7 +5,7 @@ import { errors } from 'celebrate';
 import 'dotenv/config';
 
 import { logger } from './middleware/logger.js';
-import { notFound } from './middleware/notFoundHandler.js';
+import { notFoundHandler } from './middleware/notFoundHandler.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import { connectMongoDB } from './db/connectMongoDB.js';
 import notesRouter from './routes/notesRoutes.js';
@@ -19,11 +19,11 @@ app.use(logger);
 
 app.use(notesRouter);
 
-app.use(notFound);
+app.use(notFoundHandler);
 app.use(errors());
 app.use(errorHandler);
 
 await connectMongoDB();
 app.listen(PORT, () => {
-  console.log(`Server is runing on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
