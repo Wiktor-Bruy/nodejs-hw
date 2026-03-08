@@ -24,6 +24,7 @@ const noteShema = new Schema(
     },
   },
   {
+    autoIndex: false,
     timeseries: true,
     versionKey: false,
   },
@@ -39,3 +40,5 @@ const noteShema = new Schema(
 // );
 
 export const Note = model('Note', noteShema);
+
+Note.collection.createIndex({ title: 'text', content: 'text' });
