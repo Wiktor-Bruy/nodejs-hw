@@ -4,7 +4,7 @@ import cors from 'cors';
 import 'dotenv/config';
 
 import { logger } from './middleware/logger.js';
-import { notFound } from './middleware/notFoundHandler.js';
+import { notFoundHandler } from './middleware/notFoundHandler.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import { connectMongoDB } from './db/connectMongoDB.js';
 import notesRouter from './routes/notesRoutes.js';
@@ -18,7 +18,7 @@ app.use(logger);
 
 app.use(notesRouter);
 
-app.use(notFound);
+app.use(notFoundHandler);
 app.use(errorHandler);
 
 await connectMongoDB();
