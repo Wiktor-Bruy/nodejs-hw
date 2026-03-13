@@ -12,7 +12,7 @@ export async function registerUser(req, res) {
   if (isUser) {
     throw createHttpError(400, 'Email in use');
   }
-  const hashPass = bcrypt.hash(password, 10);
+  const hashPass = await bcrypt.hash(password, 10);
 
   const newUser = await User.create({
     email,
@@ -45,7 +45,7 @@ export async function loginUser(req, res) {
 }
 
 export async function refreshUserSession(req, res) {
-  const session = Session.findOne({
+  const session = await Session.findOne({
     _id: req.cookies.sessionId,
     refreshToken: req.cookies.refreshToken,
   });
