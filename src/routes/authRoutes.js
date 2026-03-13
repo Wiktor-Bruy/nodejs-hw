@@ -6,11 +6,11 @@ import {
   loginUser,
   refreshUserSession,
   logoutUser,
-} from '../controllers/authController';
+} from '../controllers/authController.js';
 import {
   registerUserSchema,
   loginUserSchema,
-} from '../validations/authValidation';
+} from '../validations/authValidation.js';
 
 const router = Router();
 
