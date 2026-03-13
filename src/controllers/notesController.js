@@ -4,7 +4,7 @@ import { Note } from '../models/note.js';
 
 export async function getAllNotes(req, res) {
   const { page = 1, perPage = 10, tag, search } = req.query;
-  const scip = (page - 1) * perPage;
+  const skip = (page - 1) * perPage;
 
   const notesGet = Note.find({ userId: req.user._id });
 
@@ -15,13 +15,13 @@ export async function getAllNotes(req, res) {
     notesGet.where({ $text: { $search: search } });
   }
 
-  const [totalItems, notes] = await Promise.all([
+  const [totalNotes, notes] = await Promise.all([
     notesGet.clone().countDocuments(),
-    notesGet.scip(scip).limit(perPage),
+    notesGet.skip(skip).limit(perPage),
   ]);
-  const totalPages = Math.ceil(totalItems / perPage);
+  const totalPages = Math.ceil(totalNotes / perPage);
 
-  res.status(200).json({ page, perPage, totalItems, totalPages, notes });
+  res.status(200).json({ page, perPage, totalNotes, totalPages, notes });
 }
 
 export async function getNoteById(req, res) {
@@ -43,7 +43,10 @@ export async function createNote(req, res) {
 
 export async function deleteNote(req, res) {
   const noteId = req.params.noteId;
-  const note = await Note.deleteOne({ _id: noteId, userId: req.user._id });
+  const note = await Note.findOneAndDelete({
+    _id: noteId,
+    userId: req.user._id,
+  });
   if (!note) {
     throw createHttpError(404, 'Note not found');
   }
