@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { celebrate } from 'celebrate';
 
-import { authenticate } from '../middleware/autenticate.js';
+import { authenticate } from '../middleware/authenticate.js';
 
 import {
   getAllNotes,
@@ -9,7 +9,7 @@ import {
   createNote,
   deleteNote,
   updateNote,
-} from '../controllers/notesControllers.js';
+} from '../controllers/notesController.js';
 import {
   getAllNotesSchema,
   noteIdSchema,
