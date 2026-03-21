@@ -8,13 +8,12 @@ cloud.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-export async function saveFileToCloudinary(buffer, userId) {
+export async function saveFileToCloudinary(buffer) {
   return new Promise((resolve, reject) => {
     const uploadStream = cloud.uploader.upload_stream(
       {
         folder: 'users/avatars',
         resource_type: 'image',
-        public_id: `avatar_${userId}`,
         overwrite: true,
         unique_filename: false,
       },
