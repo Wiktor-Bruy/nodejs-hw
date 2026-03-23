@@ -1,4 +1,4 @@
-# nodejs-hw
+# note-hub-backend
 
 This is one of the projects I worked on during my studies. It's a small backend for a recording app. It integrates with the MongoDB database. It also adds user authorization and registration. It also protects private routes from unauthorized users and allows file uploads (in this case, images) via cloud storage.
 
