@@ -94,11 +94,11 @@ export async function requestResetEmail(req, res) {
       .json({ message: 'Password reset email sent successfully' });
   }
 
-  const myToken = jwt.sign({ sub: user._id, email }, process.env.SECRET, {
+  const myToken = jwt.sign({ sub: user._id, email }, process.env.JWT_SECRET, {
     expiresIn: '15m',
   });
   const resPath = path.resolve('src/templates/reset-password-email.html');
-  const tempSouce = fs.readFile(resPath, 'utf-8');
+  const tempSouce = await fs.readFile(resPath, 'utf-8');
   const temp = handlebars.compile(tempSouce);
   const html = temp({
     name: user.username,

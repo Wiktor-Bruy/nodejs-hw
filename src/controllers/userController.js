@@ -4,16 +4,16 @@ import { saveFileToCloudinary } from '../utils/saveFileToCloudinary.js';
 import { User } from '../models/user.js';
 
 export async function updateUserAvatar(req, res) {
-  if (req.file) {
-    throw createHttpError(40, 'No file');
+  if (!req.file) {
+    throw createHttpError(400, 'No file');
   }
 
-  const result = await saveFileToCloudinary(req.file.buffer, req.user._id);
+  const result = await saveFileToCloudinary(req.file.buffer);
   if (!result) {
     throw createHttpError(500, 'Error of upload avatar(');
   }
 
-  const user = User.findOneAndUpdate(
+  const user = await User.findOneAndUpdate(
     { _id: req.user._id },
     { avatar: result.secure_url },
     { returnDocument: 'after' },
