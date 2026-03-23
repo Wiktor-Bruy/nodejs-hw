@@ -4,8 +4,8 @@ This is one of the projects I worked on during my studies. It's a small backend 
 
 ## Tech Stack
 
-- Framework: <img stc="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" widtf="65" alt="Node.js">
-- Libraries: <img stc="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" widtf="65" alt="express"> <img stc="https://github.com/devicons/devicon/blob/master/icons/mongoose/mongoose-original-wordmark.svg" widtf="65" alt="mongoose"> <img stc="https://github.com/devicons/devicon/blob/master/icons/handlebars/handlebars-original-wordmark.svg" widtf="65" alt="handlebars"> and others :books:
+- Framework: <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" widtf="65" alt="Node.js">
+- Libraries: <img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" widtf="65" alt="express"> <img src="https://github.com/devicons/devicon/blob/master/icons/mongoose/mongoose-original-wordmark.svg" widtf="65" alt="mongoose"> <img src="https://github.com/devicons/devicon/blob/master/icons/handlebars/handlebars-original-wordmark.svg" widtf="65" alt="handlebars"> and others :books:
 
 ## How to use
 
