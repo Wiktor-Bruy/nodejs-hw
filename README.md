@@ -10,7 +10,9 @@ This is one of the projects I worked on during my studies. It's a small backend 
 
 - Libraries:
 
-  <img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" width="65" alt="express"> <img src="https://github.com/devicons/devicon/blob/master/icons/mongoose/mongoose-original-wordmark.svg" width="65" alt="mongoose"> <img src="https://github.com/devicons/devicon/blob/master/icons/handlebars/handlebars-original-wordmark.svg" width="65" alt="handlebars"> and others :books:
+  <img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" width="65" alt="express"> <img src="https://github.com/devicons/devicon/blob/master/icons/mongoose/mongoose-original-wordmark.svg" width="65" alt="mongoose"> <img src="https://github.com/devicons/devicon/blob/master/icons/handlebars/handlebars-original-wordmark.svg" width="65" alt="handlebars">
+
+  and others :books:
 
 ## How to use
 
